@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://rwhq7j8umwvj"]
+
+[ext_resource type="FontFile" uid="uid://jr6fcnw8g8bw" path="res://_gfx/pong-score.ttf" id="1_tpniy"]
+
+[resource]
+default_font = ExtResource("1_tpniy")
+default_font_size = 32

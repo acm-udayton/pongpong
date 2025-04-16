@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw8s2kkpe0c1b"]
+
+[ext_resource type="Script" uid="uid://mvydwym5c21g" path="res://gamestart.gd" id="1_7h7xa"]
+[ext_resource type="Texture2D" uid="uid://c63m58a1gln3l" path="res://net.png" id="6_xixhx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yewid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xixhx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GameWindow" type="Node2D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = ExtResource("1_7h7xa")
+
+[node name="Net" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 150)
+sprite_frames = SubResource("SpriteFrames_yewid")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw8s2kkpe0c1b"]
+
+[ext_resource type="Script" uid="uid://mvydwym5c21g" path="res://gamestart.gd" id="1_7h7xa"]
+[ext_resource type="PackedScene" uid="uid://b2g8kh0ysnbb" path="res://ball.tscn" id="3_7h7xa"]
+[ext_resource type="Texture2D" uid="uid://c63m58a1gln3l" path="res://gfx/net.png" id="6_xixhx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yewid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xixhx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GameWindow" type="Node2D"]
+script = ExtResource("1_7h7xa")
+
+[node name="Net" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 150)
+sprite_frames = SubResource("SpriteFrames_yewid")
+
+[node name="Ball" parent="." instance=ExtResource("3_7h7xa")]
+position = Vector2(36, 0)

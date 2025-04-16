@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw8s2kkpe0c1b"]
+
+[ext_resource type="Texture2D" uid="uid://tp3l4pr3feeu" path="res://paddle.png" id="1_5eu3x"]
+[ext_resource type="Script" uid="uid://dvlx8tx35bhol" path="res://static_body_2d.gd" id="1_7h7xa"]
+[ext_resource type="Script" uid="uid://bnpkn3cext8lq" path="res://animated_sprite_2d.gd" id="2_enqyw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enqyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5eu3x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5eu3x"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(60, 150)
+sprite_frames = SubResource("SpriteFrames_enqyw")
+script = ExtResource("2_enqyw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+position = Vector2(-391.356, -170.927)
+scale = Vector2(2.94253, 0.780488)
+physics_material_override = SubResource("PhysicsMaterial_5eu3x")
+script = ExtResource("1_7h7xa")

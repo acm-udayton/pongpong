@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cw8s2kkpe0c1b"]
+
+[ext_resource type="Script" uid="uid://mvydwym5c21g" path="res://game_handler.gd" id="1_7h7xa"]
+[ext_resource type="Script" uid="uid://h4ehiigyudtn" path="res://set_window_min_size.gd" id="4_5eu3x"]
+[ext_resource type="AudioStream" uid="uid://bojf37bnpj13n" path="res://_sounds/bounce.wav" id="4_mfmbf"]
+[ext_resource type="Script" uid="uid://duq3ed3mdkaut" path="res://audio_manager.gd" id="4_yewid"]
+[ext_resource type="AudioStream" uid="uid://cku81ddt48as8" path="res://_sounds/hit.wav" id="6_smhj4"]
+[ext_resource type="Texture2D" uid="uid://c63m58a1gln3l" path="res://_gfx/net.png" id="6_xixhx"]
+[ext_resource type="AudioStream" uid="uid://drs8v0ilr7wns" path="res://_sounds/miss.wav" id="7_6l2cr"]
+[ext_resource type="Theme" uid="uid://rwhq7j8umwvj" path="res://score_theme.tres" id="8_smhj4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yewid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xixhx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GameWindow" type="Node2D"]
+script = ExtResource("1_7h7xa")
+
+[node name="WindowResizeLimiter" type="Node" parent="."]
+script = ExtResource("4_5eu3x")
+
+[node name="Net" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 150)
+sprite_frames = SubResource("SpriteFrames_yewid")
+
+[node name="AudioManager" type="Node2D" parent="."]
+script = ExtResource("4_yewid")
+
+[node name="Bounce" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_mfmbf")
+
+[node name="Hit" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("6_smhj4")
+
+[node name="Miss" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("7_6l2cr")
+
+[node name="P1Score" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 28.0
+offset_right = 216.0
+offset_bottom = 60.0
+theme = ExtResource("8_smhj4")
+text = "0"
+horizontal_alignment = 1
+
+[node name="P2Score" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 28.0
+offset_right = 400.0
+offset_bottom = 60.0
+theme = ExtResource("8_smhj4")
+text = "0"
+horizontal_alignment = 1

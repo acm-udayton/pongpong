@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqw1t5x0ix8d7"]
+
+[ext_resource type="Script" uid="uid://c7c2yovltofb2" path="res://paddle.gd" id="1_tbytw"]
+[ext_resource type="Texture2D" uid="uid://tp3l4pr3feeu" path="res://_gfx/paddle.png" id="2_r112f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enqyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r112f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfmbf"]
+size = Vector2(4, 16)
+
+[node name="Paddle" type="CharacterBody2D"]
+script = ExtResource("1_tbytw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_enqyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mfmbf")
